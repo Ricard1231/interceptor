@@ -12,8 +12,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-
 @RestController
 @RequestMapping("/cdplayer")
 public class CDPlayerControllerImpl implements CDPlayerController{
@@ -55,7 +53,7 @@ public class CDPlayerControllerImpl implements CDPlayerController{
 
     @Override
     @PostMapping("/song")
-    public ResponseEntity<?> song(HttpServletRequest request, @RequestBody SongDTO body) throws IOException {
+    public ResponseEntity<?> song(HttpServletRequest request, @RequestBody SongDTO body) {
         Dispatcher dispatcher = new ChangeSongDispatcher(request, player);
         dispatcher.executeInterceptors();
         player.setSong(body.getSong());

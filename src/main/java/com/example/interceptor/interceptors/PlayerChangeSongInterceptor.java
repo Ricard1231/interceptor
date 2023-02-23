@@ -3,11 +3,9 @@ package com.example.interceptor.interceptors;
 import com.example.interceptor.models.PlayerContextObject;
 import jakarta.servlet.http.HttpServletRequest;
 
-import java.io.IOException;
-
-public class PlayerSongInterceptor implements PlayerInterceptor {
+public class PlayerChangeSongInterceptor implements PlayerInterceptor {
     @Override
-    public void processRequest(HttpServletRequest request, PlayerContextObject contextObject) throws IOException {
+    public void processRequest(HttpServletRequest request, PlayerContextObject contextObject) {
 
         System.out.println("Song changed from " + contextObject.getSong());
 

@@ -2,7 +2,7 @@ package com.example.interceptor.dispatchers;
 
 import com.example.interceptor.interceptors.PlayerInterceptor;
 import com.example.interceptor.interceptors.PlayerLoggingInterceptor;
-import com.example.interceptor.interceptors.PlayerSongInterceptor;
+import com.example.interceptor.interceptors.PlayerChangeSongInterceptor;
 import com.example.interceptor.models.Player;
 import com.example.interceptor.models.PlayerContextObject;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,7 +24,7 @@ public class ChangeSongDispatcher implements Dispatcher{
         this.request = request;
         this.contextObject = new PlayerContextObject(player);
         addInterceptor(new PlayerLoggingInterceptor());
-        addInterceptor(new PlayerSongInterceptor());
+        addInterceptor(new PlayerChangeSongInterceptor());
     }
 
     @Override
