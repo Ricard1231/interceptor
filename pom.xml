@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>interceptor</artifactId>
+	<artifactId>playerInterceptor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>interceptor</name>
-	<description>CS5722-1st assignment-interceptor</description>
+	<name>playerInterceptor</name>
+	<description>CS5722-1st assignment-playerInterceptor</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

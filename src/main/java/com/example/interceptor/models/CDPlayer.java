@@ -6,7 +6,7 @@ public class CDPlayer implements Player{
 
     private PlayerState currentState = PlayerState.OFF;
 
-    private String currentSong;
+    private String song;
 
     @Override
     public PlayerState getCurrentState() {
@@ -18,12 +18,8 @@ public class CDPlayer implements Player{
         this.currentState = state;
     }
 
-    public String getCurrentSong() {
-        return this.currentSong;
-    }
-
-    public void setCurrentSong(String song) {
-        this.currentSong = song;
+    public void setSong(String song) {
+        this.song = song;
     }
 
     @Override
@@ -44,5 +40,10 @@ public class CDPlayer implements Player{
     @Override
     public void stop() {
         this.currentState = PlayerState.PAUSED;
+    }
+
+    @Override
+    public String getSong() {
+        return this.song;
     }
 }

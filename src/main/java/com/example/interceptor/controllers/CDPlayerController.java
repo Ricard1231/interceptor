@@ -14,5 +14,7 @@ public interface CDPlayerController {
 
     ResponseEntity<?> stop(HttpServletRequest request);
 
+    ResponseEntity<?> on(HttpServletRequest request);
+
     ResponseEntity<?> song(HttpServletRequest request, SongDTO body) throws IOException;
 }

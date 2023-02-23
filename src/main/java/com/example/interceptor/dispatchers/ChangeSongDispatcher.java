@@ -2,7 +2,7 @@ package com.example.interceptor.dispatchers;
 
 import com.example.interceptor.interceptors.PlayerInterceptor;
 import com.example.interceptor.interceptors.PlayerLoggingInterceptor;
-import com.example.interceptor.interceptors.PlayerNullSongInterceptor;
+import com.example.interceptor.interceptors.PlayerSongInterceptor;
 import com.example.interceptor.models.Player;
 import com.example.interceptor.models.PlayerContextObject;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayDispatcher implements Dispatcher{
+public class ChangeSongDispatcher implements Dispatcher{
 
     private List<PlayerInterceptor> playerInterceptors;
 
@@ -19,12 +19,12 @@ public class PlayDispatcher implements Dispatcher{
 
     private PlayerContextObject contextObject;
 
-    public PlayDispatcher(HttpServletRequest request, Player player) {
+    public ChangeSongDispatcher(HttpServletRequest request, Player player) {
         this.playerInterceptors = new ArrayList<>();
         this.request = request;
         this.contextObject = new PlayerContextObject(player);
-        addInterceptor(new PlayerNullSongInterceptor());
         addInterceptor(new PlayerLoggingInterceptor());
+        addInterceptor(new PlayerSongInterceptor());
     }
 
     @Override
